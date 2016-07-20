@@ -3,6 +3,14 @@
 # Script to pull the latest 10 'past broadcasts' from a twitch.tv profile
 # Uses livestreamer(badly, through subprocess)
 
+# Intended to be run as cron
+
+# Change these variables to suit you needs
+# Or better yet, abstract them into a config file
+
+video_count = 3
+storage_directory = '/home/nibz/Videos/sc'
+
 import os
 import subprocess
 import sys
@@ -16,8 +24,6 @@ except:
     print "{0} CHANNELNAME".format(sys.argv[0])
     sys.exit(1)
 
-video_count = 3
-storage_directory = '/home/nibz/Videos/sc'
 
 stream_url = "https://api.twitch.tv/kraken/channels/{0}/videos?limit={1}&offset=0&broadcasts=true&on_site=1".format(channel, video_count)
 
