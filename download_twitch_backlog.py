@@ -8,7 +8,7 @@
 # Change these variables to suit you needs
 # Or better yet, abstract them into a config file
 
-video_count = 3
+video_count = 5
 storage_directory = '/home/nibz/Videos/sc'
 
 import os
